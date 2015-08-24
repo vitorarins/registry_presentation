@@ -134,7 +134,7 @@ body {
 /* paragraph */
 
 .flowtime p {
-	font-size: 2.5rem;
+	font-size: 1.75rem;
 	line-height: 2rem;
 	margin: 2rem 0;
 }
@@ -144,7 +144,7 @@ body {
 .flowtime ul,
 .flowtime ol,
 .flowtime dl {
-	font-size: 2.5rem;
+	font-size: 1.75rem;
 	line-height: 2rem;
 	margin: 2rem 0;
 }
@@ -157,8 +157,8 @@ body {
 
 .flowtime li,
 .flowtime dd {
-	line-height: 2.5rem;
-	margin-bottom: 1.5rem;
+	line-height: 1.75rem;
+	margin-bottom: 1rem;
 	position: relative;
 }
 

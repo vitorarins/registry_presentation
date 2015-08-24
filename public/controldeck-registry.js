@@ -13,8 +13,16 @@ function messageHandler(message, a, b, c, d) {
     else if (message === '27')                  Flowtime.toggleOverview(true);
     else if (message === '13')                  Flowtime.toggleOverview(false);
     else if (message === 'prev')    	  		Flowtime.prev();
+    //else if (message === 'prev') {
+    //    Flowtime.prev();
+    //    iosocket.emit("speakerprev", { section: Flowtime.getSectionIndex(), page: Flowtime.getPageIndex()});
+    //}
     else if (message === 'prev(true)')    		Flowtime.prev(true);
     else if (message === 'next')	      		Flowtime.next();
+    //else if (message === 'next') {
+    //    Flowtime.next();
+    //    iosocket.emit("speakernext", { section: Flowtime.getSectionIndex(), page: Flowtime.getPageIndex()});
+    //}
     else if (message === 'next(true)')    		Flowtime.next(true);
     else if (message === 'prevSection')     	Flowtime.prevSection();
     else if (message === 'prevSection(true)')	Flowtime.prevSection(true);

@@ -29,7 +29,7 @@
 
 <div class="flowtime">
 	<div class="ft-section" data-id="section-1">
-		<div id="/section-1/page-1" class="ft-page" data-id="page-1" data-title="Javascript no Backend">
+		<div id="/section-1/page-0" class="ft-page" data-id="page-0" data-title="Docker Registry">
 			<div class="stack-center">
 				<div class="stacked-center">
 					<a href="javascript:Flowtime.next();">
@@ -41,28 +41,35 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-2">
-		<div id="/section-2/page-1" class="ft-page" data-id="page-2">
+		<div id="/section-2/page-0" class="ft-page" data-id="page-0">
 			<h1>Roteiro</h1>
 			<ul>
 				<li>O que é o Registry?</li>
-				<li>Imagem VS Container.</li>
+				<li>Imagem VS Container/</li>
 				<li>Necessidade de manter imagens privadas.</li>
-				<li>Dificuldades na instalação.</li>
-				<li>Alternativas</li>
+				<li>Dificuldades na instalação: Registry V1</li>
+				<li>Manutenção</li>
+				<li>Alternativas
+					<ul>
+						<li>SaaS.</li>
+						<li>On-Premises.</li>
+					</ul>
+				</li>
 				<li>Portus</li>
-				<li>Configuração do Portus</li>
+				<li>Conclusão</li>
 			</ul>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-3">
-		<div id="/section-3/page-1" class="ft-page" data-id="page-3">
+		<div id="/section-3/page-0" class="ft-page" data-id="page-0">
 			<h1>O que é o Registry?</h1>
 			<div class="stack-center">
 				<div class="stacked-center">
+
 				</div>
 			</div>
 		</div>
-		<div id="/section-3/page-2" class="ft-page" data-id="page-3">
+		<div id="/section-3/page-1" class="ft-page" data-id="page-1">
 			<h1>O que é o Registry?</h1>
 			<ul>
 				<p>Uma aplicação <strong>open-source</strong> dedicada a armazenar e distribuir imagens de Docker.</p>
@@ -74,13 +81,13 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-4">
-		<div id="/section-4/page-1" class="ft-page" data-id="page-4">
+		<div id="/section-4/page-0" class="ft-page" data-id="page-0">
 			<h1>Imagem VS Container</h1>
 			<div class="stack-center">
 				<img width="458" height="434" class="stacked-center" src="assets/img/docker-image-vs-container.png"/>
 			</div>
 		</div>
-		<div id="/section-4/page-2" class="ft-page" data-id="page-4">
+		<div id="/section-4/page-1" class="ft-page" data-id="page-1">
 			<h1>Imagem</h1>
 			<ul>
 				<li>Arquivo imutável.</li>
@@ -91,7 +98,7 @@
 				<li>Essencialmente é um <em>snapshot</em> de um container.</li>
 			</ul>
 		</div>
-		<div id="/section-4/page-3" class="ft-page" data-id="page-4">
+		<div id="/section-4/page-2" class="ft-page" data-id="page-2">
 			<h1>Imagem</h1>
 			<p>Podem ser listadas com o comando <strong>docker images</strong>:</p>
 			<p>
@@ -109,21 +116,17 @@
 		</code></pre>
 			</p>
 		</div>
-		<div id="/section-4/page-4" class="ft-page" data-id="page-4">
+		<div id="/section-4/page-3" class="ft-page" data-id="page-3">
 			<h1>Container</h1>
 			<ul>
 				<li>Objeto executável.</li>
 				<li>Encapsulação portável e leve.</li>
 				<li>Ambiente controlado para rodar aplicações.</li>
 				<li>Analogia: Imagem é a classe e container é a instancia.</li>
+				<li>É possível listar os containers em execução com o comando <strong>docker ps</strong>:</li>
 			</ul>
 			<p>
-				É possível listar os containers em execução com o comando <strong>docker ps</strong>:
-			</p>
-			<p>
 			<pre><code class="language-javascript">$ docker ps</code></pre>
-			</p>
-			<p>
 				<pre><code class="language-javascript">
 	CONTAINER ID     IMAGE           COMMAND      CREATED            STATUS               PORTS     NAMES
 
@@ -133,7 +136,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-5">
-		<div id="/section-5/page-1" class="ft-page" data-id="page-5">
+		<div id="/section-5/page-0" class="ft-page" data-id="page-0">
 			<h1>Necessidade de manter imagens privadas</h1>
 			<ul>
 				<li>Clientes que exigem nível de segurança diferenciado.</li>
@@ -144,13 +147,13 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-6">
-		<div id="/section-6/page-1" class="ft-page" data-id="page-6">
+		<div id="/section-6/page-0" class="ft-page" data-id="page-0">
 			<h1>Teoria: <em>Loops</em> de evento</h1>
 			<p class="event_loop"><em>Loops</em> de evento são o principal elemento da programação orientada a eventos, quase todos os programas que necessitam de interface ao usuário usam loops de evento para gerenciar eventos do usuário, por exemplo: Clicks, requisições AJAX, etc..</p>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-7">
-		<div id="/section-7/page-1" class="ft-page" data-id="page-7">
+		<div id="/section-7/page-0" class="ft-page" data-id="page-0">
 			<h3>Teoria: <em>Loops</em> de evento</h3>
 			<div class="stack-center">
 				<img class="stacked-center" src="assets/img/loop_eventos.png"/>
@@ -158,7 +161,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-8">
-		<div id="/section-8/page-1" class="ft-page" data-id="page-8">
+		<div id="/section-8/page-0" class="ft-page" data-id="page-0">
 			<h3>Teoria: Pilha de execução Node.js</h3>
 			<div class="stack-center">
 				<img class="stacked-center" src="assets/img/pilha_execucao_node.png"/>
@@ -166,7 +169,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-9">
-		<div id="/section-9/page-1" class="ft-page" data-id="page-9">
+		<div id="/section-9/page-0" class="ft-page" data-id="page-0">
 			<h1>E/S Não bloqueante</h1>
 			<p>E/S Tradicional:</p>
 				<pre><code class="language-javascript">
@@ -183,7 +186,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-10">
-		<div id="/section-10/page-1" class="ft-page" data-id="page-10">
+		<div id="/section-10/page-0" class="ft-page" data-id="page-0">
 			<h1>Possibilidades do Node.js</h1>
 			<ul>
 				<li><p>Criar servidor HTTP e exibir <q>Hello World</q> no navegador em apenas 4 linhas de Javascript</p></li>
@@ -196,7 +199,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-11">
-		<div id="/section-11/page-1" class="ft-page" data-id="page-1">
+		<div id="/section-11/page-0" class="ft-page" data-id="page-0">
 			<h1>Exemplo 2: Servidor HTTP</h1>
 			<p>Neste exemplo estamos criando um servidor que apenas exibe as palavras <q>Hello World</q> em texto pleno. O servidor será iniciado em <strong>localhost</strong> na porta <strong>5000</strong></p>
 			<p><pre><code class="language-javascript">
@@ -210,7 +213,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-12">
-		<div id="/section-12/page-1" class="ft-page" data-id="page-2">
+		<div id="/section-12/page-0" class="ft-page" data-id="page-0">
 			<h1>Exemplo 3: Servidor TCP</h1>
 			<p>Neste exemplo estamos criando um servidor que apenas recebe texto do servidor e o exibe no navegador em texto pleno. O servidor será iniciado em <strong>localhost</strong> na porta <strong>6000</strong></p>
 			<p><pre><code class="language-javascript">
@@ -224,7 +227,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-13">
-		<div id="/section-13/page-1" class="ft-page" data-id="page-3">
+		<div id="/section-13/page-0" class="ft-page" data-id="page-0">
 			<h1>Ecosistema Node.js</h1>
 			<p>Node.js frequentemente depende de seus <strong>módulos</strong>, nos exemplos anteriores,
 				a palavra-chave <strong>require</strong> foi usada para carregar os módulos <em>http</em> & <em>net</em>.</p>
@@ -235,7 +238,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-14">
-		<div id="/section-14/page-1" class="ft-page" data-id="page-4">
+		<div id="/section-14/page-0" class="ft-page" data-id="page-0">
 			<h1>NPM & pacotes</h1>
 			<div class="stack">
 				<p>Bibliotecas em Node.js são chamadas de <strong>pacotes (packages)</strong>, e podem ser instalados através do comando:</p>
@@ -246,7 +249,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-15">
-		<div id="/section-15/page-1" class="ft-page" data-id="page-5">
+		<div id="/section-15/page-0" class="ft-page" data-id="page-0">
 			<h1>Exemplo 4: Conectando com BD (MongoDB)</h1>
 			<p>Instale <strong>mongojs</strong> usando npm, um <em>driver</em> MongoDB para Node.js:</p>
 				<pre><code class="language-javascript">
@@ -267,7 +270,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-16">
-		<div id="/section-16/page-1" class="ft-page" data-id="page-6">
+		<div id="/section-16/page-0" class="ft-page" data-id="page-0">
 			<h1>Quando se deve usar Node.js?</h1>
 			<ul>
 				<li><p>Node.js é bom para criar serviços em tempo real baseados em <strong><em>streaming</em></strong>, aplicações de web chat, servidores de arquivos estáticos, etc.</p></li>
@@ -277,13 +280,13 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-17">
-		<div id="/section-17/page-1" class="ft-page" data-id="page-7">
+		<div id="/section-17/page-0" class="ft-page" data-id="page-0">
 			<h3>Benchmarks Node.js</h3>
 			<div class="stack-center"><img class="stacked-center" src="assets/img/benchmark_node.png"></div>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-18">
-		<div id="/section-18/page-1" class="ft-page" data-id="page-8">
+		<div id="/section-18/page-0" class="ft-page" data-id="page-0">
 			<h1>Quando não usar Node.js</h1>
 			<ul>
 				<li><p>Quando estiver fazendo operações pesadas e que consomem muita <strong>CPU</strong> no lado servidor, pois <em>loops</em> de eventos consomem muita CPU.</p></li>
@@ -297,13 +300,13 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-19">
-		<div id="/section-19/page-1" class="ft-page" data-id="page-9">
+		<div id="/section-19/page-0" class="ft-page" data-id="page-0">
 			<h1>Empresas utilizando Node.js</h1>
 			<div class="stack-center"><img class="stacked-center" src="assets/img/companies.png"></div>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-20">
-		<div id="/section-20/page-1" class="ft-page" data-id="page-10">
+		<div id="/section-20/page-0" class="ft-page" data-id="page-0">
 			<h1>Módulos importantes</h1>
 			<dl>
 				<dt><a href="http://expressjs.com/" target="_blank"><img src="assets/img/expressjs.png"/></a></dt>
@@ -320,7 +323,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-21">
-		<div id="/section-21/page-1" class="ft-page" data-id="page-11">
+		<div id="/section-21/page-0" class="ft-page" data-id="page-0">
 			<h1>Recursos para aprender mais</h1>
 			<ul>
 				<li><p>Vídeo no YouTube: <a href="https://youtu.be/jo_B4LTHi3I">youtu.be/jo_B4LTHi3I</a></p></li>
@@ -332,7 +335,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-22">
-		<div id="/section-22/page-1" class="ft-page" data-id="page-12">
+		<div id="/section-22/page-0" class="ft-page" data-id="page-0">
 			<div class="stack-center">
 				<div class="stacked-center">
 					<h1>Apresentação feita com o Framework Javascript <a href="http://flowtime-js.marcolago.com/"><img class="stacked-center" src="assets/img/flowtimejs.png"/></a></h1>
@@ -342,7 +345,7 @@
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-23">
-		<div id="/section-23/page-1" class="ft-page" data-id="page-13">
+		<div id="/section-23/page-0" class="ft-page" data-id="page-0">
 			<h1>Referências</h1>
 			<ul>
 				<li><a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></li>
@@ -358,11 +361,11 @@
 
 <!-- controldeck.js -->
 <script src="/socket.io/socket.io.js"></script>
-<script src="/controldeck-node.js"></script>
+<script src="/controldeck-registry.js"></script>
 
 <script>
 	// Configuration API test
-	// Flowtime.showProgress(true);
+	 Flowtime.showProgress(true);
 	// Flowtime.fragmentsOnSide(true);
 	// Flowtime.fragmentsOnBack(true);
 	// Flowtime.useHistory(false);

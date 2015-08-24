@@ -1,4 +1,5 @@
 $(function(){
+
     var iosocket = io.connect();
 
     iosocket.on('connect', function () {
@@ -56,6 +57,10 @@ $(function(){
             }
             var actualThumb = document.querySelector('.ft-page-thumb[data-section=__' + data.section + '][data-page=__' + data.page + ']');
             actualThumb.classList.add('actual');
+            $('#speaker-notes').html("");
+            $.getJSON('speakernotes.json', function(speakernotes) {
+                $('#speaker-notes').append(speakernotes['section-' + data.section + '/page-' + data.page]);
+            });
         });
 
     });
