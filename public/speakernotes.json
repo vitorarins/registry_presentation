@@ -1,5 +1,7 @@
 {
-  "section-1/page-0": "Hello World!",
-  "section-2/page-0": "Hello World 2!",
-  "section-2/page-1": "Hello World 3!"
+  "section-2/page-1": "A partir da API tem CRUD das imagens.<br> Listar tags. Listar histórico de camadas",
+  "section-3/page-0": "Imagem em camada hierárquica não exatamente representativa.<br> Pode haver mais de um container da mesma imagem sendo executado.",
+  "section-7/page-1": "Artifactory: 98/mes 40GB de dados, Google: Interface pela Google Storage Service",
+  "section-7/page-2": "Certificado na RapidSSL custa US$49 por mês..",
+  "section-7/page-3": "CoreOS: Precificação baseada no uso, DTR: Suporta Red Hat, CentOS e Ubuntu"
 }

@@ -28,8 +28,8 @@
 <body class="">
 
 <div class="flowtime">
-	<div class="ft-section" data-id="section-1">
-		<div id="/section-1/page-0" class="ft-page" data-id="page-0" data-title="Docker Registry">
+	<div class="ft-section" data-id="section-0">
+		<div id="/section-0/page-0" class="ft-page" data-id="page-0" data-title="Docker Registry">
 			<div class="stack-center">
 				<div class="stacked-center">
 					<a href="javascript:Flowtime.next();">
@@ -40,8 +40,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="ft-section" data-id="section-2">
-		<div id="/section-2/page-0" class="ft-page" data-id="page-0">
+	<div class="ft-section" data-id="section-1">
+		<div id="/section-1/page-0" class="ft-page" data-id="page-0">
 			<h1>Roteiro</h1>
 			<ul>
 				<li>O que é o Registry?</li>
@@ -60,8 +60,8 @@
 			</ul>
 		</div>
 	</div>
-	<div class="ft-section" data-id="section-3">
-		<div id="/section-3/page-0" class="ft-page" data-id="page-0">
+	<div class="ft-section" data-id="section-2">
+		<div id="/section-2/page-0" class="ft-page" data-id="page-0">
 			<h1>O que é o Registry?</h1>
 			<div class="stack-center">
 				<div class="stacked-center">
@@ -69,25 +69,25 @@
 				</div>
 			</div>
 		</div>
-		<div id="/section-3/page-1" class="ft-page" data-id="page-1">
+		<div id="/section-2/page-1" class="ft-page" data-id="page-1">
 			<h1>O que é o Registry?</h1>
+			<p>Uma aplicação <strong>open-source</strong> dedicada a armazenar e distribuir imagens de Docker.</p>
+			<p>Alguns conceitos chave:</p>
 			<ul>
-				<p>Uma aplicação <strong>open-source</strong> dedicada a armazenar e distribuir imagens de Docker.</p>
-				<p>Alguns conceitos chave:</p>
 				<li>Não armazena estado.</li>
 				<li>Altamente escalável.</li>
 				<li>Funciona através de API REST.</li>
 			</ul>
 		</div>
 	</div>
-	<div class="ft-section" data-id="section-4">
-		<div id="/section-4/page-0" class="ft-page" data-id="page-0">
+	<div class="ft-section" data-id="section-3">
+		<div id="/section-3/page-0" class="ft-page" data-id="page-0">
 			<h1>Imagem VS Container</h1>
 			<div class="stack-center">
 				<img width="458" height="434" class="stacked-center" src="assets/img/docker-image-vs-container.png"/>
 			</div>
 		</div>
-		<div id="/section-4/page-1" class="ft-page" data-id="page-1">
+		<div id="/section-3/page-1" class="ft-page" data-id="page-1">
 			<h1>Imagem</h1>
 			<ul>
 				<li>Arquivo imutável.</li>
@@ -98,7 +98,7 @@
 				<li>Essencialmente é um <em>snapshot</em> de um container.</li>
 			</ul>
 		</div>
-		<div id="/section-4/page-2" class="ft-page" data-id="page-2">
+		<div id="/section-3/page-2" class="ft-page" data-id="page-2">
 			<h1>Imagem</h1>
 			<p>Podem ser listadas com o comando <strong>docker images</strong>:</p>
 			<p>
@@ -106,17 +106,17 @@
 			</p>
 			<p>
 			<pre><code class="language-javascript">
-			REPOSITORY             TAG                 IMAGE ID             CREATED             VIRTUAL SIZE
+	REPOSITORY    TAG      IMAGE ID        CREATED       VIRTUAL SIZE
 
-			registry              latest              34a912ef9c03         3 days ago            423.3 MB
-			node                  latest              4797dc6f7a9c         9 weeks ago           711.8 MB
-			nginx                 latest              a785ba7493fd        11 weeks ago           132.9 MB
-			mongo                 latest              077c6501ee18        12 weeks ago           257.8 MB
-			ubuntu                14.04               99ec81b80c55        2 months ago           266 MB
+	registry      latest   34a912ef9c03    3 days ago      423.3 MB
+	node          latest   4797dc6f7a9c    9 weeks ago     711.8 MB
+	nginx         latest   a785ba7493fd    11 weeks ago    132.9 MB
+	mongo         latest   077c6501ee18    12 weeks ago    257.8 MB
+	ubuntu        14.04    99ec81b80c55    2 months ago    266 MB
 		</code></pre>
 			</p>
 		</div>
-		<div id="/section-4/page-3" class="ft-page" data-id="page-3">
+		<div id="/section-3/page-3" class="ft-page" data-id="page-3">
 			<h1>Container</h1>
 			<ul>
 				<li>Objeto executável.</li>
@@ -135,222 +135,188 @@
 			</p>
 		</div>
 	</div>
-	<div class="ft-section" data-id="section-5">
-		<div id="/section-5/page-0" class="ft-page" data-id="page-0">
+	<div class="ft-section" data-id="section-4">
+		<div id="/section-4/page-0" class="ft-page" data-id="page-0">
 			<h1>Necessidade de manter imagens privadas</h1>
 			<ul>
+				<li>Código proprietário.</li>
 				<li>Clientes que exigem nível de segurança diferenciado.</li>
 				<li>Armazenamento de arquivos e informações sigilosas dentro de uma imagem.</li>
 				<li>Diminuir o tempo de envio e recuperação das imagens (ambiente interno).</li>
-				<li></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ft-section" data-id="section-5">
+		<div id="/section-5/page-0" class="ft-page" data-id="page-0">
+			<h1>Dificuldades na instalação: Registry V1</h1>
+			<p>Diversos tipos de configuração:</p>
+			<ol>
+				<li><strong>common</strong>: used by all other flavors as base settings.</li>
+				<li><strong>local</strong>: stores data on the local filesystem.</li>
+				<li><strong>s3</strong>: stores data in an AWS S3 bucket.</li>
+				<li><strong>ceph-s3</strong>: stores data in a Ceph cluster via a Ceph Object Gateway, using the S3 API.</li>
+				<li><strong>azureblob</strong>: stores data in an Microsoft Azure Blob Storage ((docs)).</li>
+				<li><strong>dev</strong>: basic configuration using the local flavor.</li>
+				<li><strong>test</strong>: used by unit tests.</li>
+				<li><strong>prod</strong>: production configuration (basically a synonym for the s3 flavor).</li>
+				<li><strong>gcs</strong>: stores data in Google cloud storage.</li>
+				...
+				<!--<li><strong>swift</strong>: stores data in OpenStack Swift.</li>-->
+				<!--<li><strong>glance</strong>: stores data in OpenStack Glance, with a fallback to local storage.</li>-->
+				<!--<li><strong>glance-swift</strong>: stores data in OpenStack Glance, with a fallback to Swift.</li>-->
+				<!--<li><strong>elliptics</strong>: stores data in Elliptics key/value storage.</li>-->
+			</ol>
+		</div>
+		<div id="/section-5/page-1" class="ft-page" data-id="page-1">
+			<h1>Dificuldades na instalação: Registry V1</h1>
+			<p>Diversos tipos de configuração:</p>
+			<ol>
+				<li><strong>s3_access_key</strong>: string, S3 access key</li>
+				<li><strong>s3_secret_key</strong>: string, S3 secret key</li>
+				<li><strong>s3_bucket</strong>: string, S3 bucket name</li>
+				<li><strong>s3_region</strong>: S3 region where the bucket is located</li>
+				<li><strong>boto_port</strong>: for non-Amazon S3-compliant object store</li>
+				<li><strong>s3_secure</strong>: boolean, true for HTTPS to S3</li>
+				<li><strong>s3_use_sigv4</strong>: boolean, true for USE_SIGV4 (boto_host needs to be set or use_sigv4 will be ignored by boto)</li>
+				<li><strong>boto_bucket</strong>: string, the bucket name for non-Amazon S3-compliant object store</li>
+				<li><strong>boto_host</strong>: string, host for non-Amazon S3-compliant object store</li>
+				...
+				<!--<li><strong>s3_encrypt</strong>: boolean, if true, the container will be encrypted on the server-side by S3 and will be stored in an encrypted form while at rest in S3.</li>-->
+				<!--<li><strong>boto_debug</strong>: for non-Amazon S3-compliant object store</li>-->
+				<!--<li><strong>boto_calling_format</strong>: string, the fully qualified class name of the boto calling format to use when accessing S3 or a non-Amazon S3-compliant object store</li>-->
+				<!--<li><strong>storage_path</strong>: string, the sub "folder" where image data will be stored.</li>-->
+			</ol>
+		</div>
+		<div id="/section-5/page-2" class="ft-page" data-id="page-2">
+			<h1>Dificuldades na instalação: Registry V1</h1>
+			<ul>
+				<li>Configuração de autenticação básica:
+					<ul>
+						<li>nginx</li>
+						<li>htpasswd</li>
+					</ul>
+				</li>
+				<li>Visualização e controle das imagens:
+					<ul>
+						<li>Aplicação Grails</li>
+						<li>Senhas exibidas na aplicação</li>
+					</ul>
+				</li>
+				<li>Certificado assinado por CA</li>
 			</ul>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-6">
 		<div id="/section-6/page-0" class="ft-page" data-id="page-0">
-			<h1>Teoria: <em>Loops</em> de evento</h1>
-			<p class="event_loop"><em>Loops</em> de evento são o principal elemento da programação orientada a eventos, quase todos os programas que necessitam de interface ao usuário usam loops de evento para gerenciar eventos do usuário, por exemplo: Clicks, requisições AJAX, etc..</p>
+			<h1>Manutenção</h1>
+			<ul>
+				<li>Gerenciamento de usuários</li>
+				<li>Gerenciamento de namespaces</li>
+				<li>Espaço em disco</li>
+				<li>Velocidade de download/upload (pull/push)</li>
+				<li>Status dos serviços (Registry, UI e Nginx)</li>
+				<li>Tempo de resposta dos serviços</li>
+			</ul>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-7">
 		<div id="/section-7/page-0" class="ft-page" data-id="page-0">
-			<h3>Teoria: <em>Loops</em> de evento</h3>
+			<h1>Alternativas</h1>
 			<div class="stack-center">
-				<img class="stacked-center" src="assets/img/loop_eventos.png"/>
+				<div class="stacked-center">
+					<img class="stacked-center" src="assets/img/alternatives.png"/>
+				</div>
 			</div>
+		</div>
+		<div id="/section-7/page-1" class="ft-page" data-id="page-1">
+			<h1>Alternativas - SaaS</h1>
+			<dl>
+				<dt><a href="https://quay.io/">Quay.io</a></dt>
+				<dd>Builds automatizados de forma clara e elegante</dd>
+				<dd>Link com qualquer Repositório Git</dd>
+				<dt><a href="http://www.jfrog.com/artifactory/versions/#Cloud">Artifactory (Cloud)</a></dt>
+				<dd>Voltado para quem já utiliza a ferramenta para repositórios Maven ou Gradle</dd>
+				<dd>Custo apenas de armazenamento e upload das imagens</dd>
+				<dt><a href="https://cloud.google.com/container-registry/">Google Container Registry</a></dt>
+				<dd>Indicado para organizações que já utilizam Google Cloud Platform</dd>
+				<dt><a href="https://hub.docker.com/">Docker Hub</a></dt>
+				<dd>Integração transparente com a ferramenta docker</dd>
+			</dl>
+		</div>
+		<div id="/section-7/page-2" class="ft-page" data-id="page-2">
+			<h1>Alternativas - On-Premises</h1>
+			<p><strong class="attention">É necessário um certificado assinado por uma autoridade certificadora (CA).</strong></p>
+			<p>Se for um certificado auto-assinado, é necessário alterar cada máquina que consuma o Registry:</p>
+			<ul>
+				<li>Alterar docker daemon: <pre><code class="language-javascript">DOCKER_OPTS= --insecure-registry={REGISTRY_IP}</code></pre> ou</li>
+				<li>Instalar o certificado auto-assinado nas máquinas</li>
+			</ul>
+		</div>
+		<div id="/section-7/page-3" class="ft-page" data-id="page-3">
+			<h1>Alternativas - On-Premises</h1>
+			<dl>
+				<dt><a href="https://coreos.com/products/enterprise-registry">CoreOS - Enterprise Registry</a></dt>
+				<dd>Builds automatizados de forma clara e elegante.</dd>
+				<dt><a href="http://www.jfrog.com/artifactory/versions/#Pro">Artifactory (Pro)</a></dt>
+				<dd>Voltado para times que já utilizam o Artifactory.</dd>
+				<dt><a href="https://www.docker.com/docker-trusted-registry">Docker Trusted Registry</a></dt>
+				<dd>Instalação relativamente simples.</dd>
+				<dd>Falta de interface para as imagens</dd>
+				<dt><a href="https://www.docker.com/docker-registry">Docker Registry Open Source (V2)</a></dt>
+				<dd>Liberdade de configuração e implementação.</dd>
+				<dt><a href="http://suse.github.io/Portus/">Portus</a></dt>
+				<dd>Aplicação completa open source.</dd>
+			</dl>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-8">
 		<div id="/section-8/page-0" class="ft-page" data-id="page-0">
-			<h3>Teoria: Pilha de execução Node.js</h3>
-			<div class="stack-center">
-				<img class="stacked-center" src="assets/img/pilha_execucao_node.png"/>
-			</div>
+			<h1>Portus</h1>
+			<ul>
+				<li>Open Source</li>
+				<li>Autenticação no Registry por meio de token</li>
+				<li>Interface Web amigável para imagens</li>
+				<li>Controle de permissões a nível de usuários e grupos</li>
+				<li>Gerenciamento simples de usuários, grupos e namespaces</li>
+				<li>Registros de auditoria</li>
+			</ul>
+		</div>
+		<div id="/section-8/page-1" class="ft-page" data-id="page-1">
+			<h1>Portus</h1>
+			<ul>
+				<li>Constante desenvolvimento</li>
+				<li><a href="https://github.com/SUSE/Portus/issues/279">Issue #279:</a> É necessário estar logado para fazer o <strong>pull</strong> de qualquer imagem</li>
+				<li><a href="https://github.com/SUSE/Portus/issues/283">Issue #283:</a> Qualquer um pode se inscrever e usar a ferramenta</li>
+				<li><a href="https://github.com/SUSE/Portus/issues/198">Issue #198:</a> Não há como remover um usuário completamente</li>
+			</ul>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-9">
 		<div id="/section-9/page-0" class="ft-page" data-id="page-0">
-			<h1>E/S Não bloqueante</h1>
-			<p>E/S Tradicional:</p>
-				<pre><code class="language-javascript">
-					var result = db.query(“select x from table_y”);
-					fazerAlgoCom(result); // esperar por resultados
-					fazerAlgoSemResult(); // execução bloqueada!
-				</code></pre>
-			<p>E/S Não bloqueante:</p>
-				<pre><code class="language-javascript">
-					db.query(“select x from table_y”, function (result) {
-					fazerAlgoCom(result); //esperar por resultados });
-					fazerAlgoSemResult(); // execução sem espera!
-				</code></pre>
+			<h1>Conclusão</h1>
+			<ul>
+				<li>Estude a fundo suas necessidades</li>
+				<li>De preferência a soluções SaaS se for possível</li>
+				<li>Utilize uma soluçãoo sem muita demanda de manutenção</li>
+				<li>Contribua com Open-Source Software :)</li>
+			</ul>
 		</div>
 	</div>
 	<div class="ft-section" data-id="section-10">
 		<div id="/section-10/page-0" class="ft-page" data-id="page-0">
-			<h1>Possibilidades do Node.js</h1>
-			<ul>
-				<li><p>Criar servidor HTTP e exibir <q>Hello World</q> no navegador em apenas 4 linhas de Javascript</p></li>
-				<li><p>Criar servidor TCP similar ao HTTP em apenas 4 linhas de Javascript</p></li>
-				<li><p>Criar servidor DNS</p></li>
-				<li><p>Criar servidor de arquivos estáticos</p></li>
-				<li><p>Criar aplicação de Web Chat como Hangouts no navegador</p></li>
-				<li><p>Também pode ser usado para criar jogos online, ferramentas de colaboração e qualquer aplicação que necessite enviar atualizações ao usuário em tempo real</p></li>
-			</ul>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-11">
-		<div id="/section-11/page-0" class="ft-page" data-id="page-0">
-			<h1>Exemplo 2: Servidor HTTP</h1>
-			<p>Neste exemplo estamos criando um servidor que apenas exibe as palavras <q>Hello World</q> em texto pleno. O servidor será iniciado em <strong>localhost</strong> na porta <strong>5000</strong></p>
-			<p><pre><code class="language-javascript">
-			var http = require(‘http’);
-			http.createServer( function (req, res) {
-			res.writeHead(200, {‘Content-Type’: ‘text/plain’});
-			res.end(‘Hello World\n’);
-			}).
-			listen(5000, “127.0.0.1”);
-		</code></pre></p>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-12">
-		<div id="/section-12/page-0" class="ft-page" data-id="page-0">
-			<h1>Exemplo 3: Servidor TCP</h1>
-			<p>Neste exemplo estamos criando um servidor que apenas recebe texto do servidor e o exibe no navegador em texto pleno. O servidor será iniciado em <strong>localhost</strong> na porta <strong>6000</strong></p>
-			<p><pre><code class="language-javascript">
-			var net = require(‘net’);
-			net.createServer( function (socket) {
-			socket.write(“Echo servidor\r\n”);
-			socket.pipe(socket);
-			})
-			.listen(6000, “127.0.0.1”);
-		</code></pre></p>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-13">
-		<div id="/section-13/page-0" class="ft-page" data-id="page-0">
-			<h1>Ecosistema Node.js</h1>
-			<p>Node.js frequentemente depende de seus <strong>módulos</strong>, nos exemplos anteriores,
-				a palavra-chave <strong>require</strong> foi usada para carregar os módulos <em>http</em> & <em>net</em>.</p>
-			<p>Para criar <strong>módulos</strong>, é preciso colocar o código Javascript em um arquivo
-				<strong>‘.js’</strong> separado e incluir em seu código usando a palavra-chave <strong>require</strong> da seguinte maneira:
-			</p>
-			<p><pre><code class="language-javascript">var modulox = require(‘./modulox’);  // carrega o arquivo modulox.js como módulo</code></pre></p>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-14">
-		<div id="/section-14/page-0" class="ft-page" data-id="page-0">
-			<h1>NPM & pacotes</h1>
-			<div class="stack">
-				<p>Bibliotecas em Node.js são chamadas de <strong>pacotes (packages)</strong>, e podem ser instalados através do comando:</p>
-				<p><pre><code class="language-javascript">npm install “nome_do_pacote”; // o pacote deve estar disponível no registry npm @ npmjs.org</code></pre></p>
-				<p><strong>NPM</strong> (Node Package Manager) vem junto com a instalação do Node.js</p>
-				<img src="assets/img/npm.png">
-			</div>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-15">
-		<div id="/section-15/page-0" class="ft-page" data-id="page-0">
-			<h1>Exemplo 4: Conectando com BD (MongoDB)</h1>
-			<p>Instale <strong>mongojs</strong> usando npm, um <em>driver</em> MongoDB para Node.js:</p>
-				<pre><code class="language-javascript">
-					npm install mongojs
-				</code></pre>
-			<p>Código para recuperar todos os documentos de uma coleção:</p>
-				<pre><code class="language-javascript">
-					var db = require(“mongojs”)
-					.connect(“localhost:27017/test”, [‘test’]);
-
-					db.test.find({}, function(err, posts) {
-					if (err || !posts) console.log(“No posts found”);
-					posts.forEach( function(post) {
-					console.log(post);
-					});
-					});
-				</code></pre>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-16">
-		<div id="/section-16/page-0" class="ft-page" data-id="page-0">
-			<h1>Quando se deve usar Node.js?</h1>
-			<ul>
-				<li><p>Node.js é bom para criar serviços em tempo real baseados em <strong><em>streaming</em></strong>, aplicações de web chat, servidores de arquivos estáticos, etc.</p></li>
-				<li><p>Quando é necessário alto nível de concorrencia, sem se preocupar com ciclos de CPU</p></li>
-				<li><p>Quando já se possui bastante código <strong>Javascript</strong>, assim é possível utilizar a mesma linguagem do lado do cliente e do servidor.</p></li>
-			</ul>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-17">
-		<div id="/section-17/page-0" class="ft-page" data-id="page-0">
-			<h3>Benchmarks Node.js</h3>
-			<div class="stack-center"><img class="stacked-center" src="assets/img/benchmark_node.png"></div>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-18">
-		<div id="/section-18/page-0" class="ft-page" data-id="page-0">
-			<h1>Quando não usar Node.js</h1>
-			<ul>
-				<li><p>Quando estiver fazendo operações pesadas e que consomem muita <strong>CPU</strong> no lado servidor, pois <em>loops</em> de eventos consomem muita CPU.</p></li>
-				<li><p>Node.js não se compara a outros frameworks de aplicação a nível empresarial como <strong>Spring (Java)</strong>,
-					<strong>Django (Python)</strong>, <strong>Symfony (PHP)</strong>, etc.. Aplicações escritas nessas plataformas são destinadas a ter
-					alta interação com o usuário e envolvem uma lógica de negócio bem complexa.</p></li>
-				<li><p>A API Node.js ainda está em <em>beta</em>, muda constantemente de uma revisão para outra e
-					não é muito compatível com versões anteriores. A maioria dos pacotes são instáveis.
-					Portanto não está pronto para ambiente de produção ainda.</p></li>
-			</ul>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-19">
-		<div id="/section-19/page-0" class="ft-page" data-id="page-0">
-			<h1>Empresas utilizando Node.js</h1>
-			<div class="stack-center"><img class="stacked-center" src="assets/img/companies.png"></div>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-20">
-		<div id="/section-20/page-0" class="ft-page" data-id="page-0">
-			<h1>Módulos importantes</h1>
-			<dl>
-				<dt><a href="http://expressjs.com/" target="_blank"><img src="assets/img/expressjs.png"/></a></dt>
-				<dd>para facilitar as coisas (sintaxe, conexões em BDs)</dd>
-				<dt><a href="http://jade-lang.com/" target="_blank"><img src="assets/img/jade.png"/></a></dt>
-				<dd>sistema de template HTML</dd>
-				<dt><a href="http://socket.io/" target="_blank"><img src="assets/img/socketio.png"/></a></dt>
-				<dd>facilita criar aplicações tempo real com <strong>Websockets</strong></dd>
-				<dt><a href="http://nodemon.io/" target="_blank"><img src="assets/img/nodemon.png"/></a></dt>
-				<dd>para monitorar Node.js e enviar mudançãs automaticamente</dd>
-				<dt><a href="http://coffeescript.org/" target="_blank"><img src="assets/img/coffeescript.png"/></a></dt>
-				<dd>para facilitar desenvolvimento Javascript</dd>
-			</dl>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-21">
-		<div id="/section-21/page-0" class="ft-page" data-id="page-0">
-			<h1>Recursos para aprender mais</h1>
-			<ul>
-				<li><p>Vídeo no YouTube: <a href="https://youtu.be/jo_B4LTHi3I">youtu.be/jo_B4LTHi3I</a></p></li>
-				<li><p>Visite o site <a href="http://nodejs.org">nodejs.org</a>.</p></li>
-				<li><p>Assita tutoriais sobre Node.js em: <a href="http://nodetuts.com/">nodetuts.com</a></p></li>
-				<li><p>Para mais informações sobre MongoDB: <a href="http://docs.mongodb.org/manual/">docs.mongodb.org/manual</a></p></li>
-				<li><p>Comunidade em Florianópolis: <a href="http://nodeschool.io/florianopolis/">nodeschool.io/florianopolis</a></p></li>
-			</ul>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-22">
-		<div id="/section-22/page-0" class="ft-page" data-id="page-0">
 			<div class="stack-center">
 				<div class="stacked-center">
-					<h1>Apresentação feita com o Framework Javascript <a href="http://flowtime-js.marcolago.com/"><img class="stacked-center" src="assets/img/flowtimejs.png"/></a></h1>
-					<h1>E controlada com o Framework Javascript <a href="http://controldeck.aws.af.cm/"><img class="stacked-center" src="assets/img/controldeck.jpg"/></a></h1>
+					<h4>Apresentação feita com</h4>
+					<a href="http://flowtime-js.marcolago.com/"><img class="stacked-center" src="assets/img/flowtimejs.png"/></a>
+					<h4>E controlada com</h4>
+					<a href="http://controldeck.aws.af.cm/"><img class="stacked-center" src="assets/img/controldeck.jpg"/></a>
+					<h4>Referências</h4>
+					<li><a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></li>
+					<li><a href="http://paislee.io/how-to-automate-docker-deployments/">http://paislee.io/how-to-automate-docker-deployments/</a></li>
+					<li><a href="http://rancher.com/comparing-four-hosted-docker-registries/">http://rancher.com/comparing-four-hosted-docker-registries/</a></li>
+					<li><a href="https://github.com/docker/docker-registry">https://github.com/docker/docker-registry</a></li>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="ft-section" data-id="section-23">
-		<div id="/section-23/page-0" class="ft-page" data-id="page-0">
-			<h1>Referências</h1>
-			<ul>
-				<li><a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></li>
-				<li><a href="http://paislee.io/how-to-automate-docker-deployments/">http://paislee.io/how-to-automate-docker-deployments/</a></li>
-			</ul>
 		</div>
 	</div>
 </div>
