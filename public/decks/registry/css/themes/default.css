@@ -208,6 +208,12 @@ body {
 	margin: 1rem 0;
 }
 
+/*.flowtime .special-code code {*/
+	/*font-family: monospace;*/
+	/*font-size: 0.6em;*/
+	/*margin: 0.3rem 0;*/
+/*}*/
+
 .flowtime strong {
 	font-weight: bold;
 	color: #ff992e;

@@ -18,8 +18,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="author" content="vitorarins">
-
-	<title>Node.js</title>
+	<title>Docker Registry</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="css/flowtime.css">
 	<link rel="stylesheet" href="css/themes/default.css">
@@ -32,10 +31,11 @@
 		<div id="/section-0/page-0" class="ft-page" data-id="page-0" data-title="Docker Registry">
 			<div class="stack-center">
 				<div class="stacked-center">
-					<a href="javascript:Flowtime.next();">
+					<h1 class="page-title">Docker Registry</h1>
+					<h6>Mantendo suas imagens privadas</h6>
+					<a class="stacked-center" href="javascript:Flowtime.next();">
 						<img src="assets/img/oyster-registry.png">
 					</a>
-					<p class="page-title">Docker Registry</p>
 					<p>Por: <strong><a href="https://github.com/vitorarins">Vitor Arins</a></strong></div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 			<h1>Roteiro</h1>
 			<ul>
 				<li>O que é o Registry?</li>
-				<li>Imagem VS Container/</li>
+				<li>Imagem != Container</li>
 				<li>Necessidade de manter imagens privadas.</li>
 				<li>Dificuldades na instalação: Registry V1</li>
 				<li>Manutenção</li>
@@ -65,18 +65,21 @@
 			<h1>O que é o Registry?</h1>
 			<div class="stack-center">
 				<div class="stacked-center">
-					<img class="stacked-center" src="assets/img/HubDocker.png"/>
+					<img width="600" height="350" class="stacked-center" src="assets/img/HubDocker.png"/>
 				</div>
 			</div>
 		</div>
 		<div id="/section-2/page-1" class="ft-page" data-id="page-1">
 			<h1>O que é o Registry?</h1>
-			<p>Uma aplicação <strong>open-source</strong> dedicada a armazenar e distribuir imagens de Docker.</p>
+			<p>Uma aplicação <strong>open source</strong> dedicada a armazenar e distribuir imagens de Docker.</p>
 			<p>Alguns conceitos chave:</p>
 			<ul>
-				<li>Não armazena estado.</li>
-				<li>Altamente escalável.</li>
 				<li>Funciona através de API REST.</li>
+				<li>Funcionamento básico:
+					<pre><code class=" language-markup">$ docker login &lt;registry&gt;
+$ docker tag &lt;registry&gt;/&lt;namespace&gt;/&lt;image&gt;
+$ docker pull/push &lt;registry&gt;/&lt;namespace&gt;/&lt;image&gt;</code></pre>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -84,7 +87,7 @@
 		<div id="/section-3/page-0" class="ft-page" data-id="page-0">
 			<h1>Imagem VS Container</h1>
 			<div class="stack-center">
-				<img width="458" height="434" class="stacked-center" src="assets/img/docker-image-vs-container.png"/>
+				<img width="458" height="400" class="stacked-center" src="assets/img/docker-image-vs-container.png"/>
 			</div>
 		</div>
 		<div id="/section-3/page-1" class="ft-page" data-id="page-1">
@@ -101,20 +104,15 @@
 		<div id="/section-3/page-2" class="ft-page" data-id="page-2">
 			<h1>Imagem</h1>
 			<p>Podem ser listadas com o comando <strong>docker images</strong>:</p>
-			<p>
-			<pre><code class="language-javascript">$ docker images</code></pre>
-			</p>
-			<p>
-			<pre><code class="language-javascript">
-	REPOSITORY    TAG      IMAGE ID        CREATED       VIRTUAL SIZE
 
-	registry      latest   34a912ef9c03    3 days ago      423.3 MB
-	node          latest   4797dc6f7a9c    9 weeks ago     711.8 MB
-	nginx         latest   a785ba7493fd    11 weeks ago    132.9 MB
-	mongo         latest   077c6501ee18    12 weeks ago    257.8 MB
-	ubuntu        14.04    99ec81b80c55    2 months ago    266 MB
-		</code></pre>
-			</p>
+			<pre><code class="language-javascript">$ docker images</code></pre>
+			<pre><code class="language-javascript">REPOSITORY       TAG        IMAGE ID          CREATED         VIRTUAL SIZE
+
+registry        latest     34a912ef9c03      3 days ago        423.3 MB
+node            latest     4797dc6f7a9c      9 weeks ago       711.8 MB
+nginx           latest     a785ba7493fd      11 weeks ago      132.9 MB
+mongo           latest     077c6501ee18      12 weeks ago      257.8 MB
+ubuntu          14.04      99ec81b80c55      2 months ago      266 MB</code></pre>
 		</div>
 		<div id="/section-3/page-3" class="ft-page" data-id="page-3">
 			<h1>Container</h1>
@@ -127,11 +125,9 @@
 			</ul>
 			<p>
 			<pre><code class="language-javascript">$ docker ps</code></pre>
-				<pre><code class="language-javascript">
-	CONTAINER ID     IMAGE           COMMAND      CREATED            STATUS               PORTS     NAMES
+				<pre><code class="language-javascript">CONTAINER ID     IMAGE           COMMAND      CREATED       STATUS      PORTS     NAMES
 
-	d955ec7a3dad    mongo:latest   "/bin/echo"   3 weeks ago   Exited (0) 3 weeks ago     27017   elegant_turing
-				</code></pre>
+d955ec7a3dad    mongo:latest   "/bin/echo"   2 min ago   Up 2 mins     27017   elegant_turing</code></pre>
 			</p>
 		</div>
 	</div>
@@ -157,10 +153,10 @@
 				<li><strong>ceph-s3</strong>: stores data in a Ceph cluster via a Ceph Object Gateway, using the S3 API.</li>
 				<li><strong>azureblob</strong>: stores data in an Microsoft Azure Blob Storage ((docs)).</li>
 				<li><strong>dev</strong>: basic configuration using the local flavor.</li>
-				<li><strong>test</strong>: used by unit tests.</li>
-				<li><strong>prod</strong>: production configuration (basically a synonym for the s3 flavor).</li>
-				<li><strong>gcs</strong>: stores data in Google cloud storage.</li>
 				...
+				<!--<li><strong>test</strong>: used by unit tests.</li>-->
+				<!--<li><strong>prod</strong>: production configuration (basically a synonym for the s3 flavor).</li>-->
+				<!--<li><strong>gcs</strong>: stores data in Google cloud storage.</li>				-->
 				<!--<li><strong>swift</strong>: stores data in OpenStack Swift.</li>-->
 				<!--<li><strong>glance</strong>: stores data in OpenStack Glance, with a fallback to local storage.</li>-->
 				<!--<li><strong>glance-swift</strong>: stores data in OpenStack Glance, with a fallback to Swift.</li>-->
@@ -169,7 +165,7 @@
 		</div>
 		<div id="/section-5/page-1" class="ft-page" data-id="page-1">
 			<h1>Dificuldades na instalação: Registry V1</h1>
-			<p>Diversos tipos de configuração:</p>
+			<p>Diversos parâmetros para cada tipo:</p>
 			<ol>
 				<li><strong>s3_access_key</strong>: string, S3 access key</li>
 				<li><strong>s3_secret_key</strong>: string, S3 secret key</li>
@@ -177,10 +173,10 @@
 				<li><strong>s3_region</strong>: S3 region where the bucket is located</li>
 				<li><strong>boto_port</strong>: for non-Amazon S3-compliant object store</li>
 				<li><strong>s3_secure</strong>: boolean, true for HTTPS to S3</li>
-				<li><strong>s3_use_sigv4</strong>: boolean, true for USE_SIGV4 (boto_host needs to be set or use_sigv4 will be ignored by boto)</li>
-				<li><strong>boto_bucket</strong>: string, the bucket name for non-Amazon S3-compliant object store</li>
-				<li><strong>boto_host</strong>: string, host for non-Amazon S3-compliant object store</li>
 				...
+				<!--<li><strong>s3_use_sigv4</strong>: boolean, true for USE_SIGV4 (boto_host needs to be set or use_sigv4 will be ignored by boto)</li>-->
+				<!--<li><strong>boto_bucket</strong>: string, the bucket name for non-Amazon S3-compliant object store</li>-->
+				<!--<li><strong>boto_host</strong>: string, host for non-Amazon S3-compliant object store</li>-->
 				<!--<li><strong>s3_encrypt</strong>: boolean, if true, the container will be encrypted on the server-side by S3 and will be stored in an encrypted form while at rest in S3.</li>-->
 				<!--<li><strong>boto_debug</strong>: for non-Amazon S3-compliant object store</li>-->
 				<!--<li><strong>boto_calling_format</strong>: string, the fully qualified class name of the boto calling format to use when accessing S3 or a non-Amazon S3-compliant object store</li>-->
@@ -224,7 +220,7 @@
 			<h1>Alternativas</h1>
 			<div class="stack-center">
 				<div class="stacked-center">
-					<img class="stacked-center" src="assets/img/alternatives.png"/>
+					<img width="975" height="600" class="stacked-center" src="assets/img/alternatives.png"/>
 				</div>
 			</div>
 		</div>
@@ -236,23 +232,30 @@
 				<dd>Link com qualquer Repositório Git</dd>
 				<dt><a href="http://www.jfrog.com/artifactory/versions/#Cloud">Artifactory (Cloud)</a></dt>
 				<dd>Voltado para quem já utiliza a ferramenta para repositórios Maven ou Gradle</dd>
-				<dd>Custo apenas de armazenamento e upload das imagens</dd>
 				<dt><a href="https://cloud.google.com/container-registry/">Google Container Registry</a></dt>
 				<dd>Indicado para organizações que já utilizam Google Cloud Platform</dd>
+				<dd>Custo apenas de armazenamento e upload das imagens</dd>
 				<dt><a href="https://hub.docker.com/">Docker Hub</a></dt>
 				<dd>Integração transparente com a ferramenta docker</dd>
 			</dl>
 		</div>
 		<div id="/section-7/page-2" class="ft-page" data-id="page-2">
+			<h1>Alternativas - SaaS</h1>
+			<p>Possibilidade de criar um <strong>Registry Mirror</strong> local para atuar como cache das imagens e diminuir tempo de <em>pull/push</em>.</p>
+			<pre><code class="language-markup">$ docker run -d -p 5000 -e REGISTRY_PROXY_REMOTEURL=&lt;remote_registry&gt; registry:2</code></pre>
+			<p>Para isso é necessário alterar o docker daemon de cada máquina que consuma o Registry</p>
+			<pre><code class="language-markup">DOCKER_OPTS= --registry-mirror=&lt;registry&gt;</code></pre>
+		</div>
+		<div id="/section-7/page-3" class="ft-page" data-id="page-3">
 			<h1>Alternativas - On-Premises</h1>
 			<p><strong class="attention">É necessário um certificado assinado por uma autoridade certificadora (CA).</strong></p>
 			<p>Se for um certificado auto-assinado, é necessário alterar cada máquina que consuma o Registry:</p>
 			<ul>
-				<li>Alterar docker daemon: <pre><code class="language-javascript">DOCKER_OPTS= --insecure-registry={REGISTRY_IP}</code></pre> ou</li>
+				<li>Alterar docker daemon: <pre><code class="language-markup">DOCKER_OPTS= --insecure-registry=&lt;registry&gt;</code></pre> ou</li>
 				<li>Instalar o certificado auto-assinado nas máquinas</li>
 			</ul>
 		</div>
-		<div id="/section-7/page-3" class="ft-page" data-id="page-3">
+		<div id="/section-7/page-4" class="ft-page" data-id="page-4">
 			<h1>Alternativas - On-Premises</h1>
 			<dl>
 				<dt><a href="https://coreos.com/products/enterprise-registry">CoreOS - Enterprise Registry</a></dt>
@@ -306,11 +309,10 @@
 		<div id="/section-10/page-0" class="ft-page" data-id="page-0">
 			<div class="stack-center">
 				<div class="stacked-center">
-					<h4>Apresentação feita com</h4>
-					<a href="http://flowtime-js.marcolago.com/"><img class="stacked-center" src="assets/img/flowtimejs.png"/></a>
-					<h4>E controlada com</h4>
-					<a href="http://controldeck.aws.af.cm/"><img class="stacked-center" src="assets/img/controldeck.jpg"/></a>
-					<h4>Referências</h4>
+					<h6>Apresentação feita com <a href="http://flowtime-js.marcolago.com/">Flowtime.js</a></h6>
+					<h6>E controlada com <a href="http://controldeck.aws.af.cm/">Controldeck.js</a></h6>
+					<h6>Referências</h6>
+					<h6>Código fonte disponível em <a href="https://github.com/vitorarins/registry_presentation">github.com/vitorarins/registry_presentation</a></h6>
 					<li><a href="https://docs.docker.com/registry/">https://docs.docker.com/registry/</a></li>
 					<li><a href="http://paislee.io/how-to-automate-docker-deployments/">http://paislee.io/how-to-automate-docker-deployments/</a></li>
 					<li><a href="http://rancher.com/comparing-four-hosted-docker-registries/">http://rancher.com/comparing-four-hosted-docker-registries/</a></li>
